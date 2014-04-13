@@ -1,0 +1,63 @@
+{
+    "pages": [
+        {
+            "id": 0,
+            "title": "what we do",
+            "text": "<h1 class=\"croppable\">what we do:</h1><p>We discover and craft new opportunities for ambitious clients through a research-led design process, and a belief in the power of emotional utility: The design of products and experiences that are functionally beautiful and culturally progressive.</p><p>Our studio operates at the intersection of creative technology, service and industrial design - through insight, intuition and iteration we define new Territory.</p>",
+            "images": [
+                {
+                    "url": "images/TL_Future_Mindsets_01.jpg"
+		        }
+            ]
+        },
+        {
+            "id": 1,
+            "title": "observation",
+            "text": "<h1>observation</h1><br />Our background in anthropology provides a critical understanding of what motivates people. We observe, discuss, probe and co-create with consumers and experts to generate insight and drive foresight.",
+            "images": [
+                {
+                    "url": "images/TL_observation.jpg"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "foresight",
+            "text": "<h1>foresight</h1><br />We join the dots between contemporary happenings and trends to identify future patterns of behaviour, amplifying weak signals to define market-specific opportunities.",
+            "images": [
+		{
+                    "url": "images/TL_Concept_Commercial_05.jpg"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "title": "opportunity",
+            "text": "<h1>opportunity</h1><br />By mapping, storyboarding and rapidly prototyping ideas we find relevant and resonant gaps in markets. We bridge the divide between the conceptual and the commercial.",
+            "images": [
+        	{
+                    "url": "images/TL_opportunity.jpg"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "title": "experience",
+            "text": "<h1>experience</h1><br />The studio’s background brings together digital, service & industrial design, allowing us to craft individual solutions as well as creating and curating the end-to-end experiential touchpoints of a brand.",
+            "images": [
+{
+                    "url": "images/TL_NewLandscapes_01.jpg"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "title": "craft",
+            "text": "<h1>craft</h1><br />Everything we do, regardless of project scale or medium is guided by an acute sense of craft - a process of iterative refinement that values the detail as highly as the essential idea.",
+            "images": [{
+                    "url": "images/TL_craft.jpg"
+                }
+	]
+        }
+    ]
+}

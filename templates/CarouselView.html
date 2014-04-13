@@ -1,0 +1,11 @@
+<span ng-repeat="img in imageStore"
+      ng-class="{ 'active': activeSlide == $index }"
+      ng-show="activeSlide == $index"
+      class="slide slide-{{$index}}">
+
+        <div class="imageText" ng-hide="!img.title">
+            <div class="html" ng-bind-html="img.title"></div>
+            <div class="bg"></div>
+        </div>
+        <div class="carouselImage" style="background-image: url({{img.url}});" />
+</span>

@@ -1,0 +1,102 @@
+/* iPads (landscape) ----------- */
+
+@media screen and (max-width: 1200px), screen and (max-height: 710px) {
+
+    ul.tabs li a {
+        width: 145px !important;
+        height: 160px !important;
+        padding-right: 23px !important;
+        padding-top: 18px !important;
+        font-size: 18px !important;
+        line-height: 24px !important;
+    }
+
+    div.tabWrapper {
+        margin-left: -440px !important;
+    }
+
+    #homePageWrapper {
+        width: 880px !important;
+        margin-left: -440px !important;
+    }
+
+    .pageText {
+        font-size: 24px !important;
+        line-height: 32px !important;
+        top: 100px !important;
+    }
+
+    ul.tabs.active li.active a {
+        transform: translate3d(0, -15px, 0) !important;
+        -webkit-transform: translate3d(0, -15px, 0) !important;
+        -ms-transform: translate3d(0, -15px, 0) !important;
+        opacity: 1;
+    }
+
+
+    .imageText {
+        top: 125px !important;
+        font-size: 14px !important;
+        padding-right: 20px !important;
+    }
+
+    @media screen and (min-width: 921px) {
+
+        ul.tabs li:hover a {
+            transform: translate3d(0, -5px, 0);
+            -webkit-transform: translate3d(0, -5px, 0);
+        }
+
+    }
+
+
+    .page-aligner {
+        width: 880px !important;
+        margin-left: -440px !important;
+    }
+
+    #aboutPageWrapper section h1 {
+        font-size: 24px !important;
+        width: 400px !important;
+    }
+
+    #aboutPageWrapper section.craft img {
+        width: 465px !important;
+        padding-top: 5px !important;
+    }
+
+    #aboutPageWrapper section span.title, #aboutPageWrapper section span.subtitle {
+        font-size: 26px !important;
+    }
+
+    #aboutPageWrapper section h2 {
+        font-size: 16px !important;
+        margin: 35px 0 25px 0 !important;
+    }
+
+
+    #aboutPageWrapper section.person .page-aligner .float-right {
+        width: 465px !important;
+    }
+
+    #aboutPageWrapper section.person {
+        height: 469px !important;
+    }
+
+    #aboutPageWrapper section.person .page-aligner {
+        background-size: 380px 460px !important;
+    }
+
+    #aboutPageWrapper section span.title {
+        margin-top: 60px !important;
+    }
+
+    section.studio .float-left { width: 460px !important; }
+    section.studio a.button { font-size: 16px !important; }
+    div.icon-territory-big.float-right { width: 305px !important; height: 310px !important; }
+
+    footer { padding: 40px 0 100px 0 !important; }
+    footer ul li { width: 215px !important; font-size: 14px !important; }
+    footer ul li span { font-size: 16px !important; }
+    footer ul li.maps-image > img { width: 245px !important; }
+}

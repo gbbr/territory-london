@@ -1,0 +1,19 @@
+<div id="swipe-layer" ng-swipe-right="goLeft()" ng-swipe-left="goRight()">
+
+    <div id="homePageWrapper">
+        <ng-include src="'templates/MenuTemplate.html'">a</ng-include>
+
+        <div class="pageText" x-animate-out="home.pages[activePage].text" ng-bind-html="home.pages[activePage].text"></div>
+    </div>
+
+    <div class="carouselWrapper" x-carousel="home.pages[activePage]"></div>
+
+    <div class="tabWrapper">
+        <ul class="tabs" ng-class="{ 'active': activePage >= 0 }">
+            <li ng-repeat="page in home.pages" ng-class="{ 'active' : page.id == activePage }" class="tabPanelButton">
+                <a ng-click="changePage(page.id)" class="tab-{{page.id}}">{{page.title}}<!-- <span class="page-id">{{page.id}}</span>--></a>
+            </li>
+        </ul>
+    </div>
+
+</div>

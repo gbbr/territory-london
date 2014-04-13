@@ -1,0 +1,618 @@
+
+@import "fonts/stylesheet.css";
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body, html {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: #000;
+
+    width: 100%;
+    height: 100%;
+    max-width:100%;
+    max-height:100%;
+    overflow:hidden;
+
+    font-family: "tinlight", helveticaneue-light;
+    font-weight: 200;
+
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+#swipe-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    z-index: 10000;
+}
+
+#ngView {
+    width: 100%;
+    height: 100%;
+}
+
+a { outline-style: none; }
+
+#homePageWrapper {
+    position: absolute;
+    width: 1135px;
+    height: 100%;
+    left: 50%;
+    margin-left: -567px;
+}
+
+#scroller {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    height: 100%;
+}
+
+#scroller #homePageWrapper {
+
+}
+
+#logo, #logoSmall {
+    position: absolute;
+    z-index: 100;
+    top: 25px;
+    left: 0px;
+    outline: none;
+    display: block;
+}
+
+#logoSmall { display: none; }
+
+#mainMenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    position: absolute;
+    right: 0px;
+    top: 31px;
+    z-index: 100;
+}
+
+#mainMenu li {
+    float: left;
+    margin-right: 30px;
+}
+
+#mainMenu li a {
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "tinregular", "Helvetica Neue Light";
+    font-size: 14px;
+
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+}
+
+.pageText {
+    position: absolute;
+    top: 130px;
+    left: 0px;
+    z-index: 5;
+
+    font-family: "tinlight", "Helvetica Neue Light";
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: 200;
+
+    color: #fff;
+    display: block;
+    width: 680px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s ease-out;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.pageText h1 {
+    margin-bottom: 0px;
+    font-weight: normal;
+}
+
+h1.subtitle {
+    position: fixed;
+    bottom: 75px;
+    z-index: 6;
+    color: #FFF;
+    font-size: 56px;
+}
+
+.pageText.getOut.getOut-add.getOut-add-active {
+    opacity: 0;
+    transform: translate3d(35px, 0, 0);
+    -webkit-transform: translate3d(35px, 0, 0);
+}
+
+.pageText.getOut.getOut-remove {
+    opacity: 0;
+    transform: translate3d(-35px, 0, 0);
+    -webkit-transform: translate3d(-35px, 0, 0);
+}
+
+.carouselWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carouselWrapper .carouselImage {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center center;
+    background-size: cover;
+}
+
+.carouselWrapper .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.carouselWrapper .slide img {
+    margin: 0;
+    padding: 0;
+}
+
+.carouselWrapper .slide.active {
+    z-index: 3;
+}
+
+
+
+
+
+/* HIDE / SHOW CAROUSEL ITEMS */
+
+.carouselWrapper .slide.ng-hide-add,
+.carouselWrapper .slide.ng-hide-remove
+{
+    -webkit-transition:all linear 1s;
+    transition:all linear 1s;
+    display: block !important;
+}
+
+.carouselWrapper .slide.ng-hide-add { opacity: 1; }
+.carouselWrapper .slide.ng-hide-add.ng-hide-add-active { opacity: 0; }
+
+.carouselWrapper .slide.ng-hide-remove { opacity: 0; }
+.carouselWrapper .slide.ng-hide-remove.ng-hide-remove-active { opacity: 1; }
+
+
+/* REPEATER ENTER / LEAVE ITEMS */
+
+.carouselWrapper .slide.ng-leave,
+.carouselWrapper .slide.ng-enter
+{
+    display: block !important;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+.carouselWrapper .slide.ng-leave { opacity: 1; }
+.carouselWrapper .slide.ng-leave.ng-leave-active { opacity: 0; display: none!important; }
+.carouselWrapper .slide.ng-leave.ng-leave-active.active { opacity: 0; display: block!important; }
+
+.carouselWrapper .slide.ng-enter { opacity: 0; }
+.carouselWrapper .slide.ng-enter.ng-enter-active { opacity: 0; display: none!important; }
+.carouselWrapper .slide.ng-enter.ng-enter-active.active { opacity: 1; display: block!important; }
+
+/* PAGE ANIMATIONS */
+
+#ngView.ng-leave,
+#ngView.ng-leave.ng-leave-active,
+#ngView.ng-enter,
+#ngView.ng-enter-active {
+    display: block !important;
+    position: absolute;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+#ngView.ng-leave { opacity: 1; }
+#ngView.ng-leave.ng-leave-active { opacity: 0; }
+
+#ngView.ng-enter { opacity: 0; }
+#ngView.ng-enter-active { opacity: 1; }
+
+
+
+
+div.tabWrapper {
+    position: absolute;
+    bottom: -100px;
+    margin-left: -567px;
+
+    left: 50%;
+    z-index: 10;
+}
+
+div.imageWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+ul.tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 1135px;
+}
+
+ul.tabs li {
+    float: left;
+    margin: 0 2px 0 0;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+ul.tabs li span.tab-title {
+    position: absolute;
+    top: 0px;
+}
+
+ul.tabs li a {
+    position: relative;
+    display: block;
+    width: 185px;
+    height: 175px;
+    padding: 22px 15px 0 15px;
+
+    background-color: rgba(255,255,255,0.25);
+
+    transition: all 0.35s;
+    -webkit-transition: all 0.35s;
+
+    font-family: "tinlight", "helvetica neue";
+    font-size: 22px;
+    line-height: 27px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* tab text colors
+ul.tabs li:hover a.tab-1, ul.tabs li.active a.tab-0 { color: #666666 !important; }
+ul.tabs li:hover a.tab-1, ul.tabs li.active a.tab-1 { color: #9a0505 !important; }
+ul.tabs li:hover a.tab-2, ul.tabs li.active a.tab-2 { color: #edad01 !important; }
+ul.tabs li:hover a.tab-3, ul.tabs li.active a.tab-3 { color: #2a9bc8 !important; }
+ul.tabs li:hover a.tab-4, ul.tabs li.active a.tab-4 { color: #19d6b5 !important; }
+ul.tabs li:hover a.tab-5, ul.tabs li.active a.tab-5 { color: #401164 !important; }
+*/
+
+ul.tabs li span.page-id {
+    font-family: "tinregular";
+    color: #cccccc;
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+ul.tabs li.active a {
+    background-color: rgba(255,255,255,1);
+    color: #666;
+}
+
+ul.tabs.active li.active a {
+    transform: translate3d(0, -20px, 0);
+    -webkit-transform: translate3d(0, -20px, 0);
+    opacity: 1;
+}
+
+
+@media screen and (min-width: 921px) {
+
+    ul.tabs:hover li a {
+        background-color: rgba(255, 255, 255, 0.14);
+    }
+
+    ul.tabs li:hover a {
+        color: #666;
+        transform: translate3d(0px, -10px, 0);
+        -webkit-transform: translate3d(0, -10px, 0);
+        -moz-transform: translate3d(0, -10px, 0);
+        -ms-transform: translate3d(0, -10px, 0);
+    }
+
+    ul.tabs li:hover a, ul.tabs:hover li.active a {
+        background-color: #fff;
+
+    }
+
+}
+
+
+
+
+#aboutPageWrapper section {
+    clear: both;
+}
+
+.page-aligner {
+    position: relative;
+    width: 1135px;
+    left: 50%;
+    margin-left: -568px;
+}
+
+#aboutPageWrapper section h1 {
+    font-family: "tinlight", "helvetica neue bold";
+    font-weight: 200;
+    font-size: 30px;
+    color: #fff;
+
+    display: block;
+    width: 530px;
+    height: 100%;
+    padding-right: 20px;
+    margin-top: 0;
+    float: left;
+}
+
+#aboutPageWrapper section.craft {
+    width: 100%;
+    float: left;
+    background: url(../images/section1bg.png) top left no-repeat;
+    background-size: cover;
+    padding: 135px 0 95px 0;
+}
+
+#aboutPageWrapper section.craft img {
+    float: left;
+    padding: 20px 0 0 30px;
+}
+
+
+#aboutPageWrapper section.person {
+    width: 100%;
+    float: left;
+    background-color: #00c6ac;
+    height: 595px;
+}
+
+#aboutPageWrapper section.person .page-aligner {
+    background: url(../images/section2bg.png) 0px 10px no-repeat #00c6ac;
+    float: left;
+    height: 100%;
+}
+
+#aboutPageWrapper section.person .page-aligner .float-right {
+    float: right;
+    width: 570px;
+}
+
+#aboutPageWrapper section span.title,
+#aboutPageWrapper section span.subtitle {
+    font-size: 30px;
+    display: block;
+    color: #fff;
+}
+
+#aboutPageWrapper section span.title {
+    font-family: "tinregular", "helvetica neue bold";
+    margin-top: 105px;
+}
+
+#aboutPageWrapper section span.subtitle {
+    font-family: "tinlight", helveticaneue-light;
+}
+
+#aboutPageWrapper section h2 {
+    font-family: tinregular, helveticaneue-light;
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+    margin: 57px 0 45px 0;
+    font-weight: 200;
+}
+
+a.linkedin-icon, a.twitter-icon {
+    width: 59px;
+    height: 33px;
+    background: url(../images/iconLinkedin-2x.png) top left no-repeat;
+    background-size: 34px 33px;
+    display: block;
+    float: left;
+}
+
+a.linkedin-icon {
+    background: url(../images/iconTwitter-2x.png) 0px 3px no-repeat;
+    width: 34px;
+    background-size: 34px 27px;
+}
+
+
+section.studio {
+    background: url(../images/section3bg.png) top left no-repeat;
+    background-size: cover;
+    float: left;
+    width: 100%;
+}
+
+section.studio .float-left {
+    width: 510px;
+    float: left;
+}
+
+section.studio h2 {
+    margin-bottom: 50px;
+}
+
+section.studio a.button {
+    display: inline-block;
+    padding: 10px 20px;
+
+    background-color: #00c6ac;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+
+    font-family: "tinregular", "helvetica neue bold";
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 85px;
+}
+
+div.icon-territory-big.float-right {
+    background: url(../images/territoryIcon-2x.png) bottom right no-repeat;
+    background-size: 123px 180px;
+    display: block;
+    width: 430px;
+    height: 375px;
+    float: left;
+}
+
+
+footer {
+    clear: both;
+    padding: 60px 0 150px 0;
+    overflow: auto;
+    background: #ffffff;
+}
+
+footer h1 {
+    font-family: "tinregular", "helvetica neue bold";
+    font-size: 30px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    float: left;
+    display: block;
+    width: 280px;
+}
+
+footer ul li h3 {
+    font-family: tinregular, "helvetica neue bold";
+}
+
+footer ul li span {
+    font-family: tinlight, helveticaneue-light;
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+}
+
+footer ul li.maps-image > img {
+    margin-top: 18px;
+}
+
+span.tooltip {
+    position: absolute;
+    width: 410px;
+    height: 50px;
+    line-height: 20px;
+    padding: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    color: #ababab;
+    background: rgb(255, 255, 255);
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 0px;
+    box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px;
+    top: 40px;
+    right: 35px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+}
+
+#mainMenu li span.tooltip > a:hover {
+    color: #00c6ac;
+}
+
+span.tooltip:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #FFFFFF transparent;
+    top: -24px;
+    right: 20px;
+}
+
+#mainMenu li span.tooltip > a {
+    font-family: "tinregular", Helvetica;
+    font-size: 16px;
+    color: #ababab;
+    font-weight: 200;
+    text-decoration: none;
+    float: left;
+    text-transform: none;
+    padding: 0 30px;
+}
+
+#mainMenu li span.tooltip > a.email {
+    display: block;
+    height: 20px;
+    border: 1px solid #000;
+    border-width: 0px 1px;
+}
+
+#mainMenu li.contact { cursor: pointer; }
+
+#mainMenu li.contact:hover span.tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.imageText {
+    position: fixed;
+    right: 0px;
+    top: 160px;
+    padding: 15px 40px 15px 15px;
+}
+
+.imageText > .bg {
+    background-color: #000;
+    opacity: 0.25;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.imageText > .html {
+    color: #FFF;
+    font-size: 16px;
+    z-index: 11;
+    position: relative;
+}
