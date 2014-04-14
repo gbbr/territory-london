@@ -580,7 +580,7 @@ span.tooltip:after {
 #mainMenu li span.tooltip > a.email {
     display: block;
     height: 20px;
-    border: 1px solid #000;
+    border: 1px solid #999;
     border-width: 0px 1px;
 }
 

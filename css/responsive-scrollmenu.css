@@ -199,8 +199,23 @@
     }
 
     span.tooltip {
-        width: 285px !important;
-        right: 45px !important;
+        position: fixed !important;
+        width: 94% !important;
+        left: 3% !important;
+        top: 50px !important;
+    }
+
+    span.tooltip > a {
+        color: #00c6ac !important;
+        width: 33%;
+    }
+
+    span.tooltip:after {
+        right: 40px !important;
+    }
+
+    span.tooltip .hide-on-mobile {
+        display: none;
     }
 
     #mainMenu li span.tooltip > a {
